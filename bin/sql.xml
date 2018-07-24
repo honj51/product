@@ -1,0 +1,4 @@
+﻿<cfg>
+	<!-- sql集中配置 -->
+	<sql alias='demo' path='demo.sql'></sql>
+</cfg>

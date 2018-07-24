@@ -1,0 +1,44 @@
+// Tables
+
+.table-row-variant(@state; @background) {
+  // Exact selectors below required to override `.table-striped` and prevent
+  // inheritance to nested tables.
+  // 原本的
+  // .table > thead > tr,
+  // .table > tbody > tr,
+  // .table > tfoot > tr {
+  //   > td.@{state},
+  //   > th.@{state},
+  //   &.@{state} > td,
+  //   &.@{state} > th {
+  //     background-color: @background;
+  //   }
+  // }
+  // 修改后,修改的值写死了，有待改进
+  .table > thead,
+  .table > tbody,
+  .table > tfoot {
+    tr.@{state},
+    &.@{state} > tr {
+      // border: 2px solid #E5DB86;
+    > td.@{state},
+    > th.@{state},
+    &.@{state} > td,
+    &.@{state} > th {
+      background-color: @background;
+      }
+    }
+  }
+
+  // Hover states for `.table-hover`
+  // Note: this is not available for cells or rows within `thead` or `tfoot`.
+  .table-hover > tbody > tr {
+    > td.@{state}:hover,
+    > th.@{state}:hover,
+    &.@{state}:hover > td,
+    &:hover > .@{state},
+    &.@{state}:hover > th {
+      background-color: darken(@background, 5%);
+    }
+  }
+}

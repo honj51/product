@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+	<session-factory>
+
+		<property name="jdbc.use_scrollable_resultset">false</property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">50</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.SQLServer2008Dialect</property>
+		<!-- <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property> -->
+		<!-- <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property> -->
+
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<!-- Drop and re-create the database schema on startup none -->
+		<property name="hbm2ddl.auto">update</property>
+		<!--<mapping resource="hibernate/userfiles.hbm.xml" /> -->
+		
+		
+		<!--参数-->
+        <!--@{name:'t_param', summery:'参数'} -->
+		<mapping resource="hibernate/系统/param.hbm.xml" /> 
+		<!--单值表 -->
+		<!--@{name:'t_singlevalue', summery:'单值表'} -->
+	    <mapping resource="hibernate/系统/singlevalue.hbm.xml" />
+	</session-factory>
+
+</hibernate-configuration>

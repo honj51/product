@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd 
+       	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+       	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.aote" />
+	<!-- 榆林中燃sqlserver -->
+ 	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close"> 
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+     	<property name="url" value="jdbc:sqlserver://127.0.0.1:1433;database=CA_CB" />
+ 		<property name="username" value="sa" />
+ 		<property name="password" value="123"/> 
+	</bean> 
+	<!-- 榆林中燃 oracle
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url"
+			value="jdbc:oracle:thin:@192.168.50.201:1521:ORCL" />
+		<property name="username" value="yulingas" />
+		<property name="password" value="yulingas" />
+	</bean>  -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocations">
+			<list>
+				<!-- <value>/WEB-INF/classes/hibernate.cfg.xml</value> -->
+				<value>/WEB-INF/classes/hibernate.cfg.xml</value>
+			</list>
+		</property>
+		<property name="packagesToScan" value="com.aote.entity" />
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="ProcessDef"  init-method="load"
+		class="com.aote.workflow.perform.ProcessDefManager">
+	</bean>
+	
+	<!-- 配置android 配置文件 -->
+	<bean id="DirConfig" class="com.aote.rs.DirConfig">
+		<property name="globalPath" value="D:\set\globals.txt"></property>
+	</bean>
+
+	<!-- 线程池配置 -->	
+	<bean id="executorService" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<!-- 线程池维护线程的最少数量 -->
+		<property name="corePoolSize" value="25" />
+		<!-- 允许的空闲时间 -->
+		<property name="keepAliveSeconds" value="200" />
+		<!-- 线程池维护线程的最大数量 -->
+		<property name="maxPoolSize" value="50" />
+		<!-- 缓存队列 -->
+		<property name="queueCapacity" value="50" />
+		<!-- 对拒绝task的处理策略 -->
+		<property name="rejectedExecutionHandler">
+			<bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy" />
+		</property>
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+</beans> 

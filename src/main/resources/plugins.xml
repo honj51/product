@@ -1,0 +1,65 @@
+﻿
+<cfg>
+<plugin class="com.aote.util.Util" alias="util"/>
+
+<plugin class="com.af.plugins.SqlTools" alias="sqlTools"/>
+
+<plugin class="com.af.plugins.AddressTools" alias="AddressTools"/>
+
+<plugin class="com.af.plugins.JsonTools" alias="jsonTools"/>
+
+<!-- 访问rest服务的插件 -->
+
+<plugin class="com.af.plugins.RestTools" alias="rest"/>
+
+<!-- 获取url配置地址的插件 -->
+
+<plugin class="com.af.plugins.UrlTools" alias="urlTools"/>
+
+<plugin class="com.af.plugins.DateTools" alias="date"/>
+
+<plugin class="com.af.plugins.calculate.UnitpriceSettlement" alias="getFixedPrice"/>
+
+<plugin class="com.af.plugins.calculate.StairpriceSettlement" alias="getStairPrice"/>
+
+<plugin class="com.af.plugins.calculate.MixedpriceSettlement" alias="getMixedPrice"/>
+
+<plugin class="com.af.plugins.CommonTools" alias="commonTools"/>
+
+<plugin class="com.af.plugins.FileSaveTools" alias="FileSaveTools"/>
+
+<!-- 工单编号生成器插件 -->
+
+<plugin class="com.af.plugins.ServiceNoGenerator" alias="ServiceNoGenerator"/>
+
+<!-- 工作流插件 -->
+
+<plugin class="com.aote.workflow.plugin.WorkFlowLogicServer" alias="wf"/>
+
+<!-- 地图坐标转换插件 -->
+
+<plugin class="com.aote.plugin.GeoTransPlugin" alias="geo"/>
+
+<!-- 清除json串id -->
+
+<plugin class="com.af.plugins.android.EmptyJSONIds" alias="EmptyJSONIds"/>
+
+<!-- 平板端模拟插件，源文件在呼叫工程中 -->
+
+<!-- 工单处理插件 -->
+
+<plugin class="com.aote.plugin.ServicePlugin" alias="service"/>
+
+<!-- 模拟平板端文件上传 -->
+
+<plugin class="com.af.plugins.android.UploadPlugin" alias="UploadPlugin"/>
+
+<!-- 巡检结单反馈插件 -->
+
+<plugin class="com.aote.plugin.PatrolFeedback" alias="PatrolFeedback"/>
+
+<!-- 金剑全局通知插件 -->
+
+<plugin class="com.aote.plugin.InformPlugin" alias="InformPlugin"/>
+
+</cfg>

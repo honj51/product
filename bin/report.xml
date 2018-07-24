@@ -1,0 +1,7 @@
+﻿<cfg>
+	<!-- 报表配置 -->
+	<report alias='multi' path='multi.rpt'/>
+	<!-- 
+		<report alias='replace_sell' path='营收/票据管理/青白江/青白江补卡票据.rpt.xml'/>
+	 -->
+</cfg>
