@@ -1,7 +1,0 @@
-﻿<subclass>
-	<!-- 操作记录表关系配置 -->
-    <!-- 
-    	 操作记录表f_operat_type等于启用，添加一条启用操作记录 
-	<entity name='t_enable' parentEntity='t_record' discProperty="f_operat_type" discriminator="启用" />
-     -->
-</subclass>

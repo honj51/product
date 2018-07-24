@@ -1,4 +1,0 @@
-﻿<cfg>
-	<!-- 业务逻辑demo -->
-	<logic alias="demo" path='demo.logic'/>
-</cfg>
