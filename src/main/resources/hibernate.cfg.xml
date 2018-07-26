@@ -27,12 +27,7 @@
 		<!--<mapping resource="hibernate/userfiles.hbm.xml" /> -->
 		
 		
-		<!--参数-->
-        <!--@{name:'t_param', summery:'参数'} -->
-		<mapping resource="hibernate/系统/param.hbm.xml" /> 
-		<!--单值表 -->
-		<!--@{name:'t_singlevalue', summery:'单值表'} -->
-	    <mapping resource="hibernate/系统/singlevalue.hbm.xml" />
+
 	</session-factory>
 
 </hibernate-configuration>

@@ -14,9 +14,9 @@
 		class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close"> 
 		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-     	<property name="url" value="jdbc:sqlserver://127.0.0.1:1433;database=zhongranziyuan" />
+     	<property name="url" value="jdbc:sqlserver://192.168.50.210:1433;database=newproductgas" />
  		<property name="username" value="sa" />
- 		<property name="password" value="123"/> 
+ 		<property name="password" value="000000"/> 
 	</bean> 
 	<!-- 榆林中燃 oracle
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
@@ -32,7 +32,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="mappingJarLocations">
 			<list>
-				<value>/WEB-INF/lib/sale-0.0.7.jar</value>
+				<value>/WEB-INF/lib/sale-0.1.2.jar</value>
 			</list>
 		</property>
 		<property name="configLocations">
