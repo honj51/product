@@ -1,3 +1,4 @@
+/* eslint-disable no-trailing-spaces */
 var express = require('express')
 var webpack = require('webpack')
 var config = require('./webpack.example.conf')
@@ -71,10 +72,10 @@ app.use('/static', express.static('./static'))
 //   })
 // })
 
-module.exports = app.listen(8081, function (err) {
+module.exports = app.listen(8082, function (err) {
   if (err) {
     console.log(err)
     return
   }
-  console.log('Listening at http://localhost:8081')
+  console.log('Listening at http://localhost:8082')
 })

@@ -4,7 +4,6 @@
   "description": "营收模块 前端组件",
   "author": "何宁社 <524395609@qq.com>",
   "license": "ISC",
-  "main": "src/index.js",
   "keywords": [
     "sale"
   ],
@@ -90,6 +89,7 @@
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0",
-    "webpack-merge": "^0.8.3"
+    "webpack-merge": "^0.8.3",
+    "sale-client": "^0.0.3"
   }
 }

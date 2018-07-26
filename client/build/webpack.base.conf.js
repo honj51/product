@@ -36,7 +36,8 @@ module.exports = {
           `${projectRoot}\\examples`,
           `${projectRoot}\\test`,
           `${projectRoot}\\node_modules\\vue-client\\src`,
-          `${projectRoot}\\node_modules\\vue-strap\\src`
+          `${projectRoot}\\node_modules\\vue-strap\\src`,
+          `${projectRoot}\\node_modules\\sale-client\\src`
         ]
       },
       {

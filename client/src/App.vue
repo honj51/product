@@ -2,16 +2,19 @@
   <app-base class="bg">
     <div class='flex'>
       <article>
-        <route :comp="{name: 'test'}"></route>
+        <route :comp="{name: 'login'}"></route>
       </article>
     </div>
   </app-base>
 </template>
 
 <script>
-import Test from './components/Test'
 
 export default {
-  components: { Test }
+  title: 'app',
+  data () {
+    return {}
+  }
+
 }
 </script>

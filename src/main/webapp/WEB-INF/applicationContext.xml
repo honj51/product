@@ -14,7 +14,7 @@
 		class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close"> 
 		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-     	<property name="url" value="jdbc:sqlserver://127.0.0.1:1433;database=CA_CB" />
+     	<property name="url" value="jdbc:sqlserver://127.0.0.1:1433;database=zhongranziyuan" />
  		<property name="username" value="sa" />
  		<property name="password" value="123"/> 
 	</bean> 
@@ -30,6 +30,11 @@
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
+		<property name="mappingJarLocations">
+			<list>
+				<value>/WEB-INF/lib/sale-0.0.7.jar</value>
+			</list>
+		</property>
 		<property name="configLocations">
 			<list>
 				<!-- <value>/WEB-INF/classes/hibernate.cfg.xml</value> -->
