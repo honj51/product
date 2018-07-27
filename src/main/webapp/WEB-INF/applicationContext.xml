@@ -32,7 +32,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="mappingJarLocations">
 			<list>
-				<value>/WEB-INF/lib/sale-0.1.2.jar</value>
+				<value>/WEB-INF/lib/sale-0.0.14.jar</value>
 			</list>
 		</property>
 		<property name="configLocations">

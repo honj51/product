@@ -1,0 +1,3 @@
+﻿<cfg>
+	<logic alias='demo' path='demo.logic'/>
+</cfg>
